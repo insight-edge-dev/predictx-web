@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Menu, X } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { appLinks } from "@/data/links";
@@ -69,15 +69,26 @@ export function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 border-none bg-transparent px-3 pt-4 shadow-none sm:px-6 sm:pt-5">
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: -12 }}
         animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className={`pointer-events-auto mx-auto flex max-w-[1280px] items-center justify-between rounded-full border border-white/10 bg-[linear-gradient(145deg,#2b1917,#201210_58%,#2a1716)] px-3 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset] backdrop-blur-xl transition-all duration-300 sm:px-5 lg:px-6 ${
+        className={`pointer-events-auto mx-auto flex max-w-[1280px] items-center justify-between rounded-full border border-white/10 bg-[linear-gradient(145deg,#2b1917,#201210_58%,#2a1716)] px-3 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset] transition-[height,box-shadow] duration-300 sm:px-5 md:backdrop-blur-xl lg:px-6 ${
           isScrolled
-            ? "h-[62px] shadow-[0_18px_56px_rgba(42,23,22,0.24)] backdrop-blur-2xl sm:h-[66px]"
+            ? "h-[62px] shadow-[0_18px_56px_rgba(42,23,22,0.24)] sm:h-[66px] md:backdrop-blur-2xl"
             : "h-[66px] shadow-[0_16px_46px_rgba(42,23,22,0.2)] sm:h-[72px]"
         }`}
       >
@@ -128,13 +139,34 @@ export function Navbar() {
         </div>
       </motion.div>
 
-      {isOpen ? (
-        <div className="pointer-events-auto fixed inset-0 z-[-1] bg-ink/35 backdrop-blur-sm md:hidden">
+      <AnimatePresence initial={false}>
+        {isOpen ? (
+          <motion.div
+            key="mobile-navigation"
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.18, ease: "easeOut" }}
+            onClick={() => setIsOpen(false)}
+            className="pointer-events-auto fixed inset-0 z-[-1] bg-ink/30 md:hidden"
+          >
           <motion.aside
-            initial={shouldReduceMotion ? false : { opacity: 0, x: 24 }}
-            animate={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
-            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-4 top-24 w-[min(calc(100vw-2rem),22rem)] rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,#2b1917,#201210_58%,#2a1716)] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            initial={
+              shouldReduceMotion
+                ? false
+                : { opacity: 0, y: -10, scale: 0.985 }
+            }
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.985 }}
+            transition={{
+              duration: shouldReduceMotion ? 0 : 0.22,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            onClick={(event) => event.stopPropagation()}
+            className="absolute right-4 top-24 w-[min(calc(100vw-2rem),22rem)] origin-top-right transform-gpu will-change-transform rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,#2b1917,#201210_58%,#2a1716)] p-5 shadow-[0_24px_64px_rgba(0,0,0,0.26)]"
           >
             <nav className="flex flex-col gap-5 px-2 py-3">
               <NavLinks onNavigate={() => setIsOpen(false)} />
@@ -151,8 +183,9 @@ export function Navbar() {
               Download App
             </a>
           </motion.aside>
-        </div>
-      ) : null}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }

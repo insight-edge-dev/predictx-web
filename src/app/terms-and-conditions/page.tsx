@@ -36,7 +36,7 @@ export default function TermsAndConditionsPage() {
         <li>You are responsible for maintaining the security of your phone number and OTP codes. Never share your OTP with anyone.</li>
         <li>Your account is personal and non-transferable. You may not share your account with others.</li>
         <li>You are responsible for all activity that occurs under your account.</li>
-        <li>Notify us immediately at <a href="mailto:contact@predictx.app">contact@predictx.app</a> if you suspect unauthorised access to your account.</li>
+        <li>Notify us immediately at <a href="mailto:support@predictx.app">support@predictx.app</a> if you suspect unauthorised access to your account.</li>
       </ul>
 
       <h2>4. Acceptable Use</h2>
@@ -125,7 +125,7 @@ export default function TermsAndConditionsPage() {
       </p>
 
       <h2>14. Contact</h2>
-      <p>For any questions about these terms: <a href="mailto:contact@predictx.app">contact@predictx.app</a></p>
+      <p>For any questions about these terms: <a href="mailto:support@predictx.app">support@predictx.app</a></p>
       <p>Inside Edge Dev, India</p>
     </LegalPageShell>
   );

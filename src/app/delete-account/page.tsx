@@ -51,10 +51,10 @@ export default function DeleteAccountPage() {
         <span className="legal-badge">Via Email — Processed within 7 days</span>
         <h2 className="legal-card-heading"><Mail className="h-5 w-5" /> Method 2: Request by Email</h2>
         <p>If you no longer have access to the app, you can request account deletion by email. Include the phone number associated with your account.</p>
-        <p>Send your request to <a href="mailto:contact@predictx.app">contact@predictx.app</a> with the subject line <strong>&quot;Delete My Account&quot;</strong> and your registered phone number in the message body.</p>
+        <p>Send your request to <a href="mailto:support@predictx.app">support@predictx.app</a> with the subject line <strong>&quot;Delete My Account&quot;</strong> and your registered phone number in the message body.</p>
         <a
           className="legal-button"
-          href="mailto:contact@predictx.app?subject=Delete%20My%20Account&body=Please%20delete%20my%20PredictX%20account.%0A%0AMy%20registered%20phone%20number%3A%20%2B91"
+          href="mailto:support@predictx.app?subject=Delete%20My%20Account&body=Please%20delete%20my%20PredictX%20account.%0A%0AMy%20registered%20phone%20number%3A%20%2B91"
         >
           <Mail className="h-4 w-4" /> Send Deletion Request
         </a>
@@ -82,7 +82,7 @@ export default function DeleteAccountPage() {
 
       <div className="legal-card legal-card-spacious">
         <h2 className="legal-card-heading"><MessageCircle className="h-5 w-5" /> Questions?</h2>
-        <p>If you have any questions about account deletion or your data, contact us at <a href="mailto:contact@predictx.app">contact@predictx.app</a>. We typically respond within 24 hours.</p>
+        <p>If you have any questions about account deletion or your data, contact us at <a href="mailto:support@predictx.app">support@predictx.app</a>. We typically respond within 24 hours.</p>
       </div>
     </LegalPageShell>
   );

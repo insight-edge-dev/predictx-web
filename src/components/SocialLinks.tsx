@@ -56,7 +56,7 @@ export function SocialIconButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Follow PredictX on ${label}`}
-      className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/55 bg-white/46 text-ink shadow-[0_14px_36px_rgba(42,23,22,0.08)] backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:scale-105 hover:border-[#5B7CFF]/55 hover:bg-white/72 hover:text-[#5B7CFF] hover:shadow-[0_18px_42px_rgba(91,124,255,0.16),0_0_0_5px_rgba(91,124,255,0.08)] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B7CFF]"
+      className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/58 text-ink shadow-[0_12px_30px_rgba(42,23,22,0.08)] backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:scale-105 hover:border-[#5B7CFF]/55 hover:bg-white/72 hover:text-[#5B7CFF] hover:shadow-[0_18px_42px_rgba(91,124,255,0.16),0_0_0_5px_rgba(91,124,255,0.08)] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B7CFF] sm:h-12 sm:w-12"
     >
       <svg
         viewBox="0 0 24 24"

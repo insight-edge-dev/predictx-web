@@ -131,17 +131,19 @@ export function Hero() {
           <div className="absolute bottom-4 left-1/2 h-10 w-64 -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
         </div>
 
-        <div className="relative z-10 order-3 mx-auto max-w-[18rem] text-center lg:mx-0 lg:justify-self-end lg:text-right">
+        <div className="relative z-10 order-3 mx-auto mt-4 w-full max-w-[20rem] rounded-[1.5rem] border border-white/80 bg-white/62 px-4 py-5 text-center shadow-[0_16px_44px_rgba(42,23,22,0.08)] backdrop-blur-xl sm:max-w-[22rem] sm:px-6 sm:py-6 lg:mx-0 lg:mt-0 lg:w-auto lg:max-w-[18rem] lg:justify-self-end lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:text-right lg:shadow-none lg:backdrop-blur-none">
           <div className="pointer-events-none absolute -left-10 top-1/2 hidden h-px w-16 bg-gradient-to-l from-ink/12 to-transparent lg:block" />
-          <h2 className="text-lg font-extrabold uppercase leading-tight tracking-tight text-text-3 sm:text-xl">
-            The best{" "}
-            <span className="rounded-xl bg-[#8BEA4F] px-1.5 py-0.5 text-text-2 shadow-[0_12px_28px_rgba(139,234,79,0.2)]">
+          <h2 className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2 text-[0.95rem] font-extrabold uppercase leading-tight tracking-[-0.02em] text-text-3 sm:text-lg lg:block lg:text-xl">
+            <span>The best</span>
+            <span className="rounded-full bg-[#8BEA4F] px-2.5 py-1 text-ink shadow-[0_12px_28px_rgba(139,234,79,0.22)] lg:ml-1 lg:rounded-xl lg:px-1.5 lg:py-0.5 lg:text-text-2">
               Experience
             </span>
-            <br />
-            in sports intelligence
+            <span className="basis-full text-[0.78rem] tracking-[0.08em] text-text-3 sm:text-sm lg:mt-1 lg:block lg:text-xl lg:tracking-tight">
+              in sports intelligence
+            </span>
           </h2>
-          <p className="mt-4 text-sm font-semibold italic leading-6 text-text-3 sm:text-base">
+          <div className="mx-auto mt-4 h-px w-10 bg-ink/10 lg:ml-auto lg:mr-0" />
+          <p className="mx-auto mt-3 max-w-[16rem] text-[0.82rem] font-semibold italic leading-5 text-text-3 sm:text-sm sm:leading-6 lg:mx-0 lg:ml-auto lg:text-base">
             Verified accuracy on every pick, every month
           </p>
         </div>
