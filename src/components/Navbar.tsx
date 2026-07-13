@@ -8,9 +8,9 @@ import { appLinks } from "@/data/links";
 import { LogoLink } from "./LogoWordmark";
 
 const navItems = [
-  { label: "Features", href: "#features" },
-  { label: "Screens", href: "#showcase" },
-  { label: "Accuracy", href: "#accuracy" },
+  { label: "Features", href: "/#features" },
+  { label: "Screens", href: "/#showcase" },
+  { label: "Accuracy", href: "/#accuracy" },
 ];
 
 function Logo() {
@@ -18,7 +18,7 @@ function Logo() {
     <LogoLink
       variant="light"
       className="shrink-0"
-      logoClassName="h-auto w-[118px] sm:w-[148px]"
+      logoClassName="h-auto w-[150px] sm:w-[200px]"
     />
   );
 }

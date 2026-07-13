@@ -76,3 +76,214 @@ canvas {
     transition-duration: 0.001ms !important;
   }
 }
+
+.legal-content h2 {
+  margin: 2.75rem 0 0.85rem;
+  border-left: 3px solid #176bff;
+  padding-left: 0.9rem;
+  color: var(--color-ink);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.legal-content > h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content p,
+.legal-content ul {
+  margin-bottom: 0.9rem;
+  color: var(--color-text-2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.45rem;
+}
+
+.legal-content strong {
+  color: var(--color-ink);
+  font-weight: 800;
+}
+
+.legal-content a:not(.legal-button) {
+  color: #176bff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgb(23 107 255 / 0.3);
+  text-underline-offset: 3px;
+}
+
+.legal-card {
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  background: rgb(255 255 255 / 0.72);
+  padding: 1.25rem;
+  box-shadow: 0 16px 42px rgb(42 23 22 / 0.05);
+}
+
+.legal-card > p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-card > strong + p {
+  margin-top: 0.45rem;
+}
+
+.legal-card-spacious {
+  margin-bottom: 1.25rem;
+  padding: 1.5rem;
+}
+
+.legal-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1rem !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.legal-table-wrap {
+  margin: 1rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: white;
+}
+
+.legal-content table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.legal-content th {
+  background: var(--color-mist);
+  color: var(--color-text-3);
+  font-weight: 800;
+  text-align: left;
+}
+
+.legal-content th,
+.legal-content td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+}
+
+.legal-content tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.legal-negative {
+  color: var(--color-live) !important;
+  font-weight: 800;
+}
+
+.legal-warning {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgb(192 57 43 / 0.2);
+  border-radius: 1rem;
+  background: rgb(192 57 43 / 0.07);
+  padding: 1rem 1.25rem;
+  color: var(--color-live);
+}
+
+.legal-warning p {
+  margin: 0;
+}
+
+.legal-badge {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgb(23 107 255 / 0.18);
+  border-radius: 999px;
+  background: rgb(23 107 255 / 0.07);
+  padding: 0.3rem 0.75rem;
+  color: #176bff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.legal-badge-success {
+  border-color: rgb(63 125 63 / 0.18);
+  background: rgb(63 125 63 / 0.08);
+  color: var(--color-success);
+}
+
+.legal-steps {
+  margin: 1rem 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.legal-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.legal-steps li > span {
+  display: flex;
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-success);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.legal-steps p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.legal-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-ink);
+  padding: 0.75rem 1.25rem;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.legal-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgb(42 23 22 / 0.18);
+}
+
+.legal-note {
+  margin: 0.9rem 0 0 !important;
+  color: var(--color-text-3) !important;
+  font-size: 0.84rem !important;
+}
+
+@media (min-width: 640px) {
+  .legal-card-spacious {
+    padding: 1.75rem;
+  }
+}

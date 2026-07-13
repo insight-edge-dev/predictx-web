@@ -8,7 +8,7 @@ export function DownloadCta() {
       id="download"
       className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6 sm:py-16"
     >
-      <div className="mx-auto mb-6 flex h-16 w-[min(13rem,80vw)] items-center justify-center rounded-2xl bg-white px-5 shadow-[0_18px_48px_rgba(42,23,22,0.08)] ring-1 ring-border">
+      <div className="mx-auto mb-6 flex h-16 w-[min(18rem,80vw)] items-center justify-center rounded-2xl bg-white px-5 shadow-[0_18px_48px_rgba(42,23,22,0.08)] ring-1 ring-border">
         <LogoWordmark className="h-auto w-full" />
       </div>
       <h2 className="mb-3 text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl">

@@ -1,12 +1,15 @@
+import Link from "next/link";
+
 import { appLinks, socialLinks } from "@/data/links";
 import { LogoLink } from "./LogoWordmark";
 import { PlayStoreBadge, SocialIconButton } from "./SocialLinks";
 
 const quickLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", status: "Coming soon" },
-  { label: "Blog", status: "Coming soon" },
-  { label: "Download App", href: "#download" },
+  { label: "Features", href: "/#features" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Delete Account", href: "/delete-account" },
+  { label: "Download App", href: "/#download" },
 ] as const;
 
 function Logo() {
@@ -14,7 +17,7 @@ function Logo() {
     <LogoLink
       variant="dark"
       className="shrink-0"
-      logoClassName="h-auto w-[170px]"
+      logoClassName="h-auto w-[240px]"
     />
   );
 }
@@ -49,21 +52,12 @@ export function Footer() {
               <ul className="mt-5 space-y-3 text-sm font-bold text-text-2">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    {"href" in link ? (
-                      <a
-                        href={link.href}
-                        className="transition hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 text-text-3">
-                        {link.label}
-                        <span className="rounded-full border border-border bg-white/55 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-text-3">
-                          {link.status}
-                        </span>
-                      </span>
-                    )}
+                    <Link
+                      href={link.href}
+                      className="transition hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
