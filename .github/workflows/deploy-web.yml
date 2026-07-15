@@ -1,0 +1,44 @@
+name: Deploy Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.2.0
+
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+
+          script: |
+            set -e
+
+            echo "🚀 Deploying PredictX Web..."
+
+            cd /var/www/predictx/web/predictx-web
+
+            git fetch origin
+            git reset --hard origin/main
+
+            npm ci || npm install
+
+            npm run build
+
+            pm2 restart predictx-web --update-env
+
+            sleep 5
+
+            curl -f https://predictxsports.com
+
+            echo "✅ PredictX Web deployed successfully"
