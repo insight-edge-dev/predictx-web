@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -61,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-text-2">
-        {children}
+        <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>
   );
