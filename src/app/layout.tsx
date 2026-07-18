@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import { InstallAppModal } from "@/components/modals/InstallAppModal";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "./globals.css";
 
@@ -63,6 +64,7 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-text-2">
         <PostHogProvider>{children}</PostHogProvider>
+        <InstallAppModal />
       </body>
     </html>
   );

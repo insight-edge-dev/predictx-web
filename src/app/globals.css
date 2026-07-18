@@ -268,12 +268,18 @@ canvas {
   font-size: 0.9rem;
   font-weight: 800;
   text-decoration: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  cursor: pointer;
+  transition:
+    background-color 220ms ease-out,
+    border-color 220ms ease-out,
+    box-shadow 220ms ease-out,
+    filter 220ms ease-out;
 }
 
 .legal-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgb(42 23 22 / 0.18);
+  background-color: rgb(42 23 22 / 0.96);
+  box-shadow: 0 12px 28px rgb(42 23 22 / 0.22);
+  filter: brightness(1.03);
 }
 
 .legal-note {

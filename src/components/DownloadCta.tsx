@@ -22,7 +22,7 @@ export function DownloadCta() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Download PredictX on Google Play"
-        className="group inline-flex rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+        className="group inline-flex cursor-pointer rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
       >
         <PlayStoreBadge />
       </a>

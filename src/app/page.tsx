@@ -4,6 +4,7 @@ import { StatsBento } from "@/components/StatsBento";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { AppShowcase } from "@/components/AppShowcase";
 import { DownloadCta } from "@/components/DownloadCta";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SectionReveal } from "@/components/SectionReveal";
 import { ScrollTextReveal } from "@/components/ScrollTextReveal";
@@ -26,6 +27,9 @@ export default function Home() {
         </SectionReveal>
         <SectionReveal>
           <DownloadCta />
+        </SectionReveal>
+        <SectionReveal>
+          <ContactForm />
         </SectionReveal>
       </main>
       <SectionReveal>

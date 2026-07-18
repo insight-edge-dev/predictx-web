@@ -31,14 +31,14 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
           key={item.href}
           href={item.href}
           onClick={onNavigate}
-          className={`group relative rounded-full px-1 text-sm font-medium text-white/58 transition duration-150 hover:-translate-y-px hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${
-            index === 0 ? "text-white" : ""
+          className={`group relative cursor-pointer rounded-full px-1 text-sm font-medium text-white transition-[opacity,filter] duration-[220ms] ease-out hover:brightness-[1.03] hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${
+            index === 0 ? "opacity-100" : "opacity-60"
           }`}
         >
           {item.label}
           <span
-            className={`absolute -bottom-2 left-1/2 h-1 rounded-full bg-white transition-all duration-150 group-hover:w-5 group-hover:-translate-x-1/2 ${
-              index === 0 ? "w-5 -translate-x-1/2" : "w-0"
+            className={`absolute -bottom-2 inset-x-0 mx-auto h-1 w-5 rounded-full bg-white transition-opacity duration-[220ms] ease-out group-hover:opacity-100 ${
+              index === 0 ? "opacity-100" : "opacity-0"
             }`}
           />
         </a>
@@ -105,9 +105,7 @@ export function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download PredictX on Google Play"
-          whileHover={{ y: -2 }}
-          transition={{ type: "spring", stiffness: 340, damping: 22 }}
-          className="hidden h-[46px] items-center gap-2 rounded-full border border-white/80 bg-white px-[26px] text-sm font-bold text-ink shadow-[0_1px_0_rgba(255,255,255,0.8)_inset] transition duration-150 hover:bg-[#fff7ef] hover:shadow-[0_14px_34px_rgba(0,0,0,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:inline-flex"
+          className="hidden h-[46px] cursor-pointer items-center gap-2 rounded-full border border-white/80 bg-white px-[26px] text-sm font-bold text-ink shadow-[0_1px_0_rgba(255,255,255,0.8)_inset] transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-white hover:bg-[#fff7ef] hover:brightness-[1.03] hover:shadow-[0_14px_34px_rgba(0,0,0,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:inline-flex"
         >
           <Download className="h-4 w-4" />
           Download App
@@ -119,7 +117,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Get PredictX now on Google Play"
-            className="inline-flex h-11 min-w-16 items-center justify-center rounded-full border border-white/80 bg-white px-3 text-[11px] font-extrabold text-ink shadow-[0_10px_26px_rgba(0,0,0,0.14)] transition hover:-translate-y-px hover:bg-[#fff7ef] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:min-w-20 sm:px-4 sm:text-xs"
+            className="inline-flex h-11 min-w-16 cursor-pointer items-center justify-center rounded-full border border-white/80 bg-white px-3 text-[11px] font-extrabold text-ink shadow-[0_10px_26px_rgba(0,0,0,0.14)] transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-white hover:bg-[#fff7ef] hover:brightness-[1.03] hover:shadow-[0_14px_32px_rgba(0,0,0,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:min-w-20 sm:px-4 sm:text-xs"
           >
             Get Now
           </a>
@@ -128,7 +126,7 @@ export function Navbar() {
             aria-label={isOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((value) => !value)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/[0.06] text-white shadow-[0_10px_26px_rgba(0,0,0,0.16)] transition hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 bg-white/[0.06] text-white shadow-[0_10px_26px_rgba(0,0,0,0.16)] transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-white/20 hover:bg-white/[0.1] hover:brightness-[1.03] hover:shadow-[0_14px_32px_rgba(0,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             {isOpen ? (
               <X className="h-5 w-5" />
@@ -177,7 +175,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               aria-label="Download PredictX on Google Play"
               onClick={() => setIsOpen(false)}
-              className="mt-4 flex h-12 items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-7 text-sm font-bold text-ink shadow-[0_12px_32px_rgba(0,0,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="mt-4 flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-7 text-sm font-bold text-ink shadow-[0_12px_32px_rgba(0,0,0,0.16)] transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-white hover:bg-[#fff7ef] hover:brightness-[1.03] hover:shadow-[0_16px_38px_rgba(0,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <Download className="h-4 w-4" />
               Download App

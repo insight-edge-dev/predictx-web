@@ -30,7 +30,7 @@ export function PlayStoreBadge({
 }) {
   return (
     <span
-      className={`inline-flex min-h-14 shrink-0 items-center gap-3 rounded-2xl bg-[#111111] px-5 py-3 text-left text-white shadow-[0_16px_42px_rgba(42,23,22,0.2)] ring-1 ring-white/10 transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_22px_56px_rgba(42,23,22,0.24)] group-active:scale-[0.98] ${className}`}
+      className={`inline-flex min-h-14 shrink-0 items-center gap-3 rounded-2xl bg-[#111111] px-5 py-3 text-left text-white shadow-[0_16px_42px_rgba(42,23,22,0.2)] ring-1 ring-white/10 transition-[background-color,box-shadow,filter] duration-[220ms] ease-out group-hover:bg-[#171717] group-hover:brightness-[1.03] group-hover:shadow-[0_22px_56px_rgba(42,23,22,0.24)] ${className}`}
     >
       <PlayStoreMark className="h-7 w-7 shrink-0" />
       <span className="grid leading-none">
@@ -56,12 +56,12 @@ export function SocialIconButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Follow PredictX on ${label}`}
-      className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/58 text-ink shadow-[0_12px_30px_rgba(42,23,22,0.08)] backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:scale-105 hover:border-[#5B7CFF]/55 hover:bg-white/72 hover:text-[#5B7CFF] hover:shadow-[0_18px_42px_rgba(91,124,255,0.16),0_0_0_5px_rgba(91,124,255,0.08)] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B7CFF] sm:h-12 sm:w-12"
+      className="group flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/70 bg-white/58 text-ink shadow-[0_12px_30px_rgba(42,23,22,0.08)] backdrop-blur-xl transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-[#5B7CFF]/55 hover:bg-white/72 hover:brightness-[1.03] hover:shadow-[0_18px_42px_rgba(91,124,255,0.16),0_0_0_5px_rgba(91,124,255,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B7CFF] sm:h-12 sm:w-12"
     >
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-5 w-5 fill-current transition duration-200 group-hover:scale-110"
+        className="h-5 w-5 fill-current"
       >
         <path d={path} />
       </svg>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import type { Feature } from "@/data/features";
 import { FeatureIcon } from "./FeatureIcon";
@@ -29,8 +29,6 @@ export function FeatureCard({
   feature: Feature;
   index: number;
 }) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <motion.article
       variants={{
@@ -38,8 +36,7 @@ export function FeatureCard({
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={shouldReduceMotion ? undefined : { y: -2 }}
-      className={`group relative overflow-hidden rounded-3xl border border-border p-6 shadow-[0_1px_0_rgba(42,23,22,0.03)] transition-shadow duration-[250ms] ease-out hover:shadow-[0_18px_45px_rgba(42,23,22,0.08)] focus-within:shadow-[0_18px_45px_rgba(42,23,22,0.08)] sm:p-7 ${
+      className={`group relative overflow-hidden rounded-3xl border border-border p-6 shadow-[0_1px_0_rgba(42,23,22,0.03)] transition-[border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-ink/10 hover:brightness-[1.01] hover:shadow-[0_18px_45px_rgba(42,23,22,0.08)] focus-within:shadow-[0_18px_45px_rgba(42,23,22,0.08)] sm:p-7 ${
         accentClasses[feature.accentColor]
       } ${sizeClasses[index] ?? "min-h-[20rem]"}`}
     >

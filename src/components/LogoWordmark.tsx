@@ -43,7 +43,7 @@ export function LogoLink({
     <Link
       href="/"
       aria-label="PredictX Sports home"
-      className={`group inline-flex min-h-11 items-center rounded-full transition duration-150 hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${
+      className={`group inline-flex min-h-11 cursor-pointer items-center rounded-full transition-[filter,opacity] duration-[220ms] ease-out hover:brightness-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${
         variant === "light"
           ? "focus-visible:outline-white"
           : "focus-visible:outline-ink"
@@ -51,7 +51,7 @@ export function LogoLink({
     >
       <LogoWordmark
         variant={variant}
-        className={`block transition duration-150 group-hover:scale-[1.015] ${logoClassName}`}
+        className={`block ${logoClassName}`}
       />
     </Link>
   );

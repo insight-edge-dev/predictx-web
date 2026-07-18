@@ -37,7 +37,7 @@ export function LegalPageShell({
             <div className="relative mx-auto max-w-4xl">
               <Link
                 href="/"
-                className="mb-9 inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white/70 px-4 text-sm font-bold text-text-2 shadow-sm transition hover:-translate-y-px hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                className="mb-9 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-border bg-white/70 px-4 text-sm font-bold text-text-2 shadow-sm transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-ink/15 hover:bg-white/90 hover:brightness-[1.03] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to home

@@ -105,7 +105,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download PredictX on Google Play"
-              className="group rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+              className="group cursor-pointer rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
             >
               <PlayStoreBadge />
             </a>

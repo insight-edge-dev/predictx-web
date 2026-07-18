@@ -6,6 +6,7 @@ import { PlayStoreBadge, SocialIconButton } from "./SocialLinks";
 
 const quickLinks = [
   { label: "Features", href: "/#features" },
+  { label: "Contact", href: "/#contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
   { label: "Delete Account", href: "/delete-account" },
@@ -89,7 +90,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download PredictX on Google Play"
-                className="group mt-5 inline-flex rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                className="group mt-5 inline-flex cursor-pointer rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
               >
                 <PlayStoreBadge className="origin-left scale-95" />
               </a>
