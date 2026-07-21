@@ -1,7 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import { InstallAppModal } from "@/components/modals/InstallAppModal";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
+import {
+  BRAND_ICON,
+  DEFAULT_DESCRIPTION,
+  ORGANIZATION_NAME,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_IMAGE,
+} from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -11,48 +19,76 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://predictxsports.com"),
-  title: "PredictX | AI Sports Predictions for Cricket & Football",
-  description:
-    "Download PredictX for AI-powered cricket and football predictions, live match insights, confidence scores, and expert analysis for IPL, World Cup 2026, BBL, PSL, and T20.",
-  alternates: {
-    canonical: "/",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "PredictX | AI Football & Cricket Predictions",
+    template: `%s | ${SITE_NAME}`,
   },
-  applicationName: "PredictX",
-  keywords: [
-    "PredictX",
-    "AI sports predictions",
-    "cricket predictions",
-    "football predictions",
-    "IPL predictions",
-    "World Cup 2026 predictions",
-    "sports intelligence app",
-  ],
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: ORGANIZATION_NAME, url: SITE_URL }],
+  creator: ORGANIZATION_NAME,
+  publisher: ORGANIZATION_NAME,
+  category: "sports",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/predictx-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: BRAND_ICON, sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/predictx-icon-192.png", sizes: "192x192", type: "image/png" }],
+  },
+  appleWebApp: {
+    capable: true,
+    title: SITE_NAME,
+    statusBarStyle: "black-translucent",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "PredictX | AI Sports Predictions for Cricket & Football",
-    description:
-      "AI match predictions, live insights, and confidence scores for cricket and football fans.",
-    url: "/",
-    siteName: "PredictX",
+    title: "PredictX | AI Football & Cricket Predictions",
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/illustrations/predictx-hero.png",
-        width: 1200,
-        height: 630,
-        alt: "PredictX AI sports prediction app",
+        url: SOCIAL_IMAGE,
+        alt: "PredictX AI sports prediction app interface",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PredictX | AI Sports Predictions for Cricket & Football",
-    description:
-      "Download PredictX for AI-powered cricket and football predictions, live match insights, and confidence scores.",
-    images: ["/illustrations/predictx-hero.png"],
+    title: "PredictX | AI Football & Cricket Predictions",
+    description: DEFAULT_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
     creator: "@predictxsports",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2a1716",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

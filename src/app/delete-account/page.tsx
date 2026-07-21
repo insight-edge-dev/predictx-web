@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import { AlertTriangle, Database, Mail, MessageCircle, Smartphone, Trash2 } from "lucide-react";
 
 import { LegalPageShell } from "@/components/legal/LegalPageShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Delete Account | PredictX Sports",
-  description: "Permanently delete your PredictX account and associated data.",
-  alternates: { canonical: "/delete-account" },
-};
+const description =
+  "Follow the official steps to permanently delete a PredictX account and remove the associated phone number, profile, preferences, and login data.";
+
+export function generateMetadata(): Metadata {
+  return createPageMetadata({
+    title: "Delete Your PredictX Account",
+    description,
+    path: "/delete-account",
+    keywords: ["delete PredictX account", "PredictX data deletion"],
+  });
+}
 
 const deletedData = [
   "Phone number",
@@ -22,6 +29,8 @@ export default function DeleteAccountPage() {
   return (
     <LegalPageShell
       title="Delete Your Account"
+      canonicalPath="/delete-account"
+      dateModified="2026-05-01"
       description="You can permanently delete your PredictX account and all associated data at any time."
       icon={<Trash2 className="h-7 w-7" />}
       tone="danger"
@@ -51,10 +60,10 @@ export default function DeleteAccountPage() {
         <span className="legal-badge">Via Email — Processed within 7 days</span>
         <h2 className="legal-card-heading"><Mail className="h-5 w-5" /> Method 2: Request by Email</h2>
         <p>If you no longer have access to the app, you can request account deletion by email. Include the phone number associated with your account.</p>
-        <p>Send your request to <a href="mailto:support@predictx.app">support@predictx.app</a> with the subject line <strong>&quot;Delete My Account&quot;</strong> and your registered phone number in the message body.</p>
+        <p>Send your request to <a href="mailto:support@predictxsports.com">support@predictxsports.com</a> with the subject line <strong>&quot;Delete My Account&quot;</strong> and your registered phone number in the message body.</p>
         <a
           className="legal-button"
-          href="mailto:support@predictx.app?subject=Delete%20My%20Account&body=Please%20delete%20my%20PredictX%20account.%0A%0AMy%20registered%20phone%20number%3A%20%2B91"
+          href="mailto:support@predictxsports.com?subject=Delete%20My%20Account&body=Please%20delete%20my%20PredictX%20account.%0A%0AMy%20registered%20phone%20number%3A%20%2B91"
         >
           <Mail className="h-4 w-4" /> Send Deletion Request
         </a>
@@ -82,7 +91,7 @@ export default function DeleteAccountPage() {
 
       <div className="legal-card legal-card-spacious">
         <h2 className="legal-card-heading"><MessageCircle className="h-5 w-5" /> Questions?</h2>
-        <p>If you have any questions about account deletion or your data, contact us at <a href="mailto:support@predictx.app">support@predictx.app</a>. We typically respond within 24 hours.</p>
+        <p>If you have any questions about account deletion or your data, contact us at <a href="mailto:support@predictxsports.com">support@predictxsports.com</a>. We typically respond within 24 hours.</p>
       </div>
     </LegalPageShell>
   );

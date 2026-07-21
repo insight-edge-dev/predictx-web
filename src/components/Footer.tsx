@@ -6,6 +6,8 @@ import { PlayStoreBadge, SocialIconButton } from "./SocialLinks";
 
 const quickLinks = [
   { label: "Features", href: "/#features" },
+  { label: "Methodology", href: "/#methodology" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },

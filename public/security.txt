@@ -1,0 +1,5 @@
+Contact: mailto:support@predictxsports.com
+Expires: 2027-07-18T23:59:59Z
+Preferred-Languages: en, hi
+Canonical: https://predictxsports.com/.well-known/security.txt
+Policy: https://predictxsports.com/privacy-policy

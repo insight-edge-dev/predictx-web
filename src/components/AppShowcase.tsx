@@ -60,7 +60,7 @@ function ShowcaseCard({
         <div className="relative h-[65%] overflow-hidden rounded-[1.1rem] border border-white/70 bg-white shadow-[0_16px_34px_rgba(42,23,22,0.11)] sm:h-[68%] sm:rounded-[1.25rem] sm:shadow-[0_18px_42px_rgba(42,23,22,0.12)]">
           <Image
             src={src}
-            alt={`PredictX ${title} mockup`}
+            alt={`PredictX app screen showing ${title}`}
             fill
             sizes="(max-width: 768px) 78vw, 16rem"
             className="object-cover object-top"

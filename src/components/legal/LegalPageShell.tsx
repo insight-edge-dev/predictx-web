@@ -2,13 +2,17 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/Navbar";
+import { createPageStructuredData } from "@/lib/seo";
 
 type LegalPageShellProps = {
   title: string;
   description: string;
   badge?: string;
   icon: React.ReactNode;
+  canonicalPath: `/${string}`;
+  dateModified?: string;
   tone?: "default" | "danger";
   children: React.ReactNode;
 };
@@ -18,11 +22,21 @@ export function LegalPageShell({
   description,
   badge,
   icon,
+  canonicalPath,
+  dateModified,
   tone = "default",
   children,
 }: LegalPageShellProps) {
   return (
     <>
+      <JsonLd
+        data={createPageStructuredData({
+          name: title,
+          description,
+          path: canonicalPath,
+          dateModified,
+        })}
+      />
       <Navbar />
       <main className="pt-28 sm:pt-32">
         <section className="px-3 sm:px-6">
@@ -35,13 +49,22 @@ export function LegalPageShell({
           >
             <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#176BFF]/10 blur-3xl" />
             <div className="relative mx-auto max-w-4xl">
-              <Link
-                href="/"
-                className="mb-9 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-border bg-white/70 px-4 text-sm font-bold text-text-2 shadow-sm transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-ink/15 hover:bg-white/90 hover:brightness-[1.03] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Back to home
-              </Link>
+              <nav aria-label="Breadcrumb" className="mb-9">
+                <ol>
+                  <li className="inline-flex">
+                    <Link
+                      href="/"
+                      className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-border bg-white/70 px-4 text-sm font-bold text-text-2 shadow-sm transition-[background-color,border-color,box-shadow,filter] duration-[220ms] ease-out hover:border-ink/15 hover:bg-white/90 hover:brightness-[1.03] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Back to home
+                    </Link>
+                  </li>
+                  <li className="sr-only" aria-current="page">
+                    {title}
+                  </li>
+                </ol>
+              </nav>
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
                 <div
                   className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-white shadow-[0_14px_34px_rgba(23,107,255,0.22)] ${

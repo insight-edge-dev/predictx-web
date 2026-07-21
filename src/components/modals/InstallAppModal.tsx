@@ -171,7 +171,7 @@ export function InstallAppModal() {
                   <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-white/60">
                     <span className="text-amber-300">4.9 ★</span>
                     <span aria-hidden="true" className="size-1 rounded-full bg-white/25" />
-                    <span>Trusted by football fans</span>
+                    <span>Trusted by cricket &amp; football fans</span>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export function InstallAppModal() {
                   Predict Smarter.
                 </h2>
                 <p id="install-app-description" className="mt-3 text-[0.94rem] font-medium leading-6 text-white/65 sm:text-base">
-                  Get instant AI football predictions, live match alerts, and exclusive features inside the PredictX app.
+                  Get instant AI cricket and football predictions, live match alerts, and exclusive features inside the PredictX app.
                 </p>
               </div>
 

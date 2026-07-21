@@ -59,7 +59,7 @@ export function ScrollTextReveal() {
       <div className="sticky top-0 mx-auto flex min-h-screen max-w-6xl items-center py-20 sm:py-28">
         <div className="relative w-full">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[min(42rem,85vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lavender-2/45 blur-3xl" />
-          <p className="relative z-10 max-w-5xl text-balance text-3xl font-extrabold uppercase leading-[1.05] tracking-tight text-ink/25 sm:text-5xl md:text-6xl lg:text-7xl">
+          <h2 className="relative z-10 max-w-5xl text-balance text-3xl font-extrabold uppercase leading-[1.05] tracking-tight text-ink/25 sm:text-5xl md:text-6xl lg:text-7xl">
             {shouldReduceMotion
               ? revealText
               : words.map((word, index) => (
@@ -77,7 +77,7 @@ export function ScrollTextReveal() {
                   nodes.push(node);
                   return nodes;
                 }, [])}
-          </p>
+          </h2>
         </div>
       </div>
     </section>

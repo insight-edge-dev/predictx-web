@@ -1,0 +1,12 @@
+/* TEAM */
+Product: PredictX
+Organization: Inside Edge Dev
+Contact: support@predictxsports.com
+Location: India
+
+/* SITE */
+Website: https://predictxsports.com/
+Purpose: AI-powered football and cricket intelligence for sports fans
+Technology: Next.js, React, TypeScript, Tailwind CSS, Framer Motion
+Language: English
+Last update: 2026-07-18

@@ -36,7 +36,7 @@ export function ContactForm() {
                 Contact PredictX
               </p>
               <h2 className="mt-3 max-w-md text-3xl font-extrabold leading-tight tracking-[-0.04em] sm:text-4xl">
-                Let&apos;s talk football intelligence.
+                Let&apos;s talk cricket and football intelligence.
               </h2>
               <p className="mt-5 max-w-md text-sm font-medium leading-7 text-white/65 sm:text-base">
                 Questions, feedback, or partnership ideas? Send us a message and our team will get back to you.

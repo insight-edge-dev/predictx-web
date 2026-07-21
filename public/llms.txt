@@ -1,0 +1,28 @@
+# PredictX
+
+> PredictX is a sports intelligence app for AI-powered football and cricket predictions, transparent confidence signals, live scores, match alerts, standings, and analyst context. PredictX is not a betting, gambling, or fantasy sports platform.
+
+## Official pages
+
+- [PredictX home](https://predictxsports.com/): Product overview, features, methodology, frequently asked questions, contact details, and official Android download.
+- [Privacy policy](https://predictxsports.com/privacy-policy): Data collection, retention, security, and user rights.
+- [Terms and conditions](https://predictxsports.com/terms-and-conditions): Product terms, prediction disclaimer, and acceptable use.
+- [Account deletion](https://predictxsports.com/delete-account): Instructions for permanently deleting a PredictX account.
+
+## Product facts
+
+- Sports covered: football and cricket.
+- Core features: AI match probabilities, confidence signals, factor analysis, live scores, match alerts, expert context, rankings, fixtures, player form, and venue intelligence.
+- Platform: Android, distributed through Google Play.
+- Price: free to download.
+- Predictions are probabilistic estimates for information and entertainment; outcomes are not guaranteed.
+
+## Prediction methodology
+
+PredictX evaluates available match signals such as recent form, team strength, player availability, venue context, historical performance, rankings, scoring patterns, and live momentum. The football model compares six groups of factors and the cricket model compares seven. These signals are converted into outcome probabilities and confidence levels, then presented with supporting factor context. Predictions can change when material match information changes.
+
+## Contact
+
+- Support: support@predictxsports.com
+- Organization: Inside Edge Dev, India
+- Website: https://predictxsports.com/

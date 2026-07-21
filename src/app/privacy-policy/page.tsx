@@ -2,18 +2,26 @@ import type { Metadata } from "next";
 import { ShieldCheck } from "lucide-react";
 
 import { LegalPageShell } from "@/components/legal/LegalPageShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | PredictX Sports",
-  description:
-    "Learn what data PredictX collects, why it is collected, and how it is protected.",
-  alternates: { canonical: "/privacy-policy" },
-};
+const description =
+  "Read how PredictX collects, uses, protects, retains, and deletes account data for its football and cricket sports intelligence app.";
+
+export function generateMetadata(): Metadata {
+  return createPageMetadata({
+    title: "Privacy Policy",
+    description,
+    path: "/privacy-policy",
+    keywords: ["PredictX privacy policy", "PredictX data protection"],
+  });
+}
 
 export default function PrivacyPolicyPage() {
   return (
     <LegalPageShell
       title="Privacy Policy"
+      canonicalPath="/privacy-policy"
+      dateModified="2026-05-01"
       badge="Last updated: May 2026"
       description={'PredictX ("we", "our", "us") is operated by Inside Edge Dev. This policy explains what data we collect, why, and how we protect it.'}
       icon={<ShieldCheck className="h-7 w-7" />}
@@ -23,7 +31,7 @@ export default function PrivacyPolicyPage() {
         PredictX is a cricket &amp; football companion app providing live scores,
         AI-powered match predictions, standings, and expert analysis. We are
         operated by Inside Edge Dev, India. Contact:{" "}
-        <a href="mailto:support@predictx.app">support@predictx.app</a>
+        <a href="mailto:support@predictxsports.com">support@predictxsports.com</a>
       </p>
 
       <h2>2. Data We Collect</h2>
@@ -108,14 +116,14 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li><strong>Access:</strong> Your profile screen shows all data we hold about you.</li>
         <li><strong>Correction:</strong> Edit your display name and favourite teams in the Profile screen at any time.</li>
-        <li><strong>Deletion:</strong> Tap <em>Delete Account</em> in the Profile screen. This immediately and permanently deletes all your data. Alternatively email <a href="mailto:support@predictx.app">support@predictx.app</a> — requests processed within 7 days.</li>
+        <li><strong>Deletion:</strong> Tap <em>Delete Account</em> in the Profile screen. This immediately and permanently deletes all your data. Alternatively email <a href="mailto:support@predictxsports.com">support@predictxsports.com</a> — requests processed within 7 days.</li>
       </ul>
 
       <h2>9. Children&apos;s Privacy</h2>
       <p>
         PredictX is not directed at children under 13. We do not knowingly collect
         data from children. If you believe a child has provided us data, contact us
-        at <a href="mailto:support@predictx.app">support@predictx.app</a> and we will
+        at <a href="mailto:support@predictxsports.com">support@predictxsports.com</a> and we will
         delete it promptly.
       </p>
 
@@ -134,7 +142,7 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <h2>12. Contact Us</h2>
-      <p>For privacy questions or data requests: <a href="mailto:support@predictx.app">support@predictx.app</a></p>
+      <p>For privacy questions or data requests: <a href="mailto:support@predictxsports.com">support@predictxsports.com</a></p>
       <p>Inside Edge Dev, India</p>
     </LegalPageShell>
   );

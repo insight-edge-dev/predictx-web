@@ -2,17 +2,26 @@ import type { Metadata } from "next";
 import { FileCheck2 } from "lucide-react";
 
 import { LegalPageShell } from "@/components/legal/LegalPageShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | PredictX Sports",
-  description: "Read the terms that apply when you use PredictX.",
-  alternates: { canonical: "/terms-and-conditions" },
-};
+const description =
+  "Read the terms for using PredictX, including account rules, acceptable use, sports-data limitations, and the AI prediction disclaimer.";
+
+export function generateMetadata(): Metadata {
+  return createPageMetadata({
+    title: "Terms & Conditions",
+    description,
+    path: "/terms-and-conditions",
+    keywords: ["PredictX terms", "PredictX prediction disclaimer"],
+  });
+}
 
 export default function TermsAndConditionsPage() {
   return (
     <LegalPageShell
       title="Terms & Conditions"
+      canonicalPath="/terms-and-conditions"
+      dateModified="2026-05-01"
       badge="Last updated: May 2026"
       description="Please read these terms carefully before using PredictX. By using the app, you agree to these terms."
       icon={<FileCheck2 className="h-7 w-7" />}
@@ -36,7 +45,7 @@ export default function TermsAndConditionsPage() {
         <li>You are responsible for maintaining the security of your phone number and OTP codes. Never share your OTP with anyone.</li>
         <li>Your account is personal and non-transferable. You may not share your account with others.</li>
         <li>You are responsible for all activity that occurs under your account.</li>
-        <li>Notify us immediately at <a href="mailto:support@predictx.app">support@predictx.app</a> if you suspect unauthorised access to your account.</li>
+        <li>Notify us immediately at <a href="mailto:support@predictxsports.com">support@predictxsports.com</a> if you suspect unauthorised access to your account.</li>
       </ul>
 
       <h2>4. Acceptable Use</h2>
@@ -66,7 +75,7 @@ export default function TermsAndConditionsPage() {
         liability for decisions made based on predictions shown in the app.
       </p>
 
-      <h2>6. Cricket Data Accuracy</h2>
+      <h2>6. Sports Data Accuracy</h2>
       <p>
         Live scores, fixtures, standings, and match data are sourced from third-party
         providers (Sportsmonks Cricket API, Cricbuzz, football-data.org). While we strive
@@ -125,7 +134,7 @@ export default function TermsAndConditionsPage() {
       </p>
 
       <h2>14. Contact</h2>
-      <p>For any questions about these terms: <a href="mailto:support@predictx.app">support@predictx.app</a></p>
+      <p>For any questions about these terms: <a href="mailto:support@predictxsports.com">support@predictxsports.com</a></p>
       <p>Inside Edge Dev, India</p>
     </LegalPageShell>
   );

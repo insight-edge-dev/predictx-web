@@ -40,6 +40,9 @@ function CardIllustration({
 export function StatsBento() {
   return (
     <section id="accuracy" className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14">
+      <h2 className="sr-only">
+        PredictX prediction accuracy and tournament coverage
+      </h2>
       <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-28 w-[70%] -translate-x-1/2 opacity-[0.06]">
         <Image
           src="/illustrations/prediction-wave.webp"
